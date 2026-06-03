@@ -17,3 +17,4 @@ Esta pasta contém recursos visuais e a apresentação final do projeto.
 - O diagrama de arquitetura pode ser criado no **Lucidchart** e exportado daqui.
 - A apresentação em `.pptx` não é visualizável no GitHub, mas fica guardada
   no repositório para entrega.
+
