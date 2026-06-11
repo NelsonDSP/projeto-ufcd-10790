@@ -1,8 +1,8 @@
 import hashlib
 from database import criar_ligacao, hash_password
 
+# sistema de login e autenticação
 def fazer_login():
-    """Pede as credenciais ao utilizador e valida na base de dados."""
     print("\n===== LOGIN =====")
     username = input("Username: ")
     password = input("Password: ")
@@ -28,5 +28,4 @@ def fazer_login():
         return None
 
 def fazer_logout(utilizador):
-    """Termina a sessão do utilizador."""
     print(f"\nSessão terminada. Até logo, {utilizador['nome']}!")
