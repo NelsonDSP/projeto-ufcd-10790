@@ -1,4 +1,4 @@
-# Nome do Projeto
+# Sistema de Gestão de Reservas de Hotel
 
 > Sistema de Gestão de Reservas de Hotel que permite registar os clientes, consultar quartos disponíveis, gerir as reservas, realizar check-in/check-out e a ocupação no hotel/histórico de reservas.
 
