@@ -1,9 +1,10 @@
 from auth import fazer_login, fazer_logout
-from quartos import adicionar_quarto, listar_quartos
+from quartos import listar_quartos
+from clientes import registar_cliente, listar_clientes
 
 utilizador = fazer_login()
 
 if utilizador:
-    adicionar_quarto()
-    listar_quartos()
+    registar_cliente()
+    listar_clientes()
     fazer_logout(utilizador)
