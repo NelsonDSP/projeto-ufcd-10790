@@ -1,16 +1,16 @@
 import sqlite3
 import hashlib
 
+# criação da base de dados e das tabelas necessárias para o sistema de gestão hoteleira
 def criar_ligacao():
-    """Cria e devolve uma ligação à base de dados."""
     return sqlite3.connect("hotel.db")
 
+# para a password ficar em hash e não em texto simples na base de dados, aumentando a segurança do sistema
 def hash_password(password):
-    """Converte a password em hash usando SHA256."""
     return hashlib.sha256(password.encode()).hexdigest()
 
+# criação das tabelas: utilizadores, clientes, quartos e reservas, com as respetivas colunas e tipos de dados
 def criar_tabelas():
-    """Cria todas as tabelas da base de dados se não existirem."""
     conn = criar_ligacao()
     cursor = conn.cursor()
 
