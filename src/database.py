@@ -1,27 +1,29 @@
 import sqlite3
-import bcrypt
+import hashlib
 
-# Função para criar uma ligação à base de dados SQLite
 def criar_ligacao():
+    """Cria e devolve uma ligação à base de dados."""
     return sqlite3.connect("hotel.db")
+
+def hash_password(password):
+    """Converte a password em hash usando SHA256."""
+    return hashlib.sha256(password.encode()).hexdigest()
 
 def criar_tabelas():
     """Cria todas as tabelas da base de dados se não existirem."""
     conn = criar_ligacao()
     cursor = conn.cursor()
 
-    # Tabela de utilizadores (rececionistas, gestores, admins)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS utilizadores (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome TEXT NOT NULL,
             username TEXT NOT NULL UNIQUE,
             password TEXT NOT NULL,
-            perfil TEXT NOT NULL  -- 'rececionista', 'gestor', 'admin'
+            perfil TEXT NOT NULL
         )
     """)
 
-    # Tabela de clientes (hóspedes)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS clientes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -32,26 +34,24 @@ def criar_tabelas():
         )
     """)
 
-    # Tabela de quartos
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS quartos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             numero TEXT NOT NULL UNIQUE,
-            tipo TEXT NOT NULL,      -- 'single', 'double', 'suite'
+            tipo TEXT NOT NULL,
             preco_noite REAL NOT NULL,
-            estado TEXT NOT NULL     -- 'disponivel', 'ocupado'
+            estado TEXT NOT NULL
         )
     """)
 
-    # Tabela de reservas (liga clientes a quartos)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS reservas (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             cliente_id INTEGER NOT NULL,
             quarto_id INTEGER NOT NULL,
-            checkin TEXT NOT NULL,   -- formato 'YYYY-MM-DD'
+            checkin TEXT NOT NULL,
             checkout TEXT NOT NULL,
-            estado TEXT NOT NULL,    -- 'confirmada', 'cancelada', 'checkin', 'checkout'
+            estado TEXT NOT NULL,
             valor_total REAL,
             FOREIGN KEY (cliente_id) REFERENCES clientes(id),
             FOREIGN KEY (quarto_id) REFERENCES quartos(id)
@@ -71,7 +71,7 @@ def criar_admin_inicial():
     total = cursor.fetchone()[0]
 
     if total == 0:
-        password_hash = bcrypt.hashpw("admin123".encode(), bcrypt.gensalt()).decode()
+        password_hash = hash_password("admin123")
         cursor.execute("""
             INSERT INTO utilizadores (nome, username, password, perfil)
             VALUES (?, ?, ?, ?)
@@ -81,7 +81,6 @@ def criar_admin_inicial():
 
     conn.close()
 
-# Quando este ficheiro é executado diretamente
 if __name__ == "__main__":
     criar_tabelas()
     criar_admin_inicial()
