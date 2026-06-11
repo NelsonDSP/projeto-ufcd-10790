@@ -1,6 +1,6 @@
 # Nome do Projeto
 
-> Breve descrição do projeto numa ou duas frases. O que faz a aplicação? Para quem?
+> Sistema de Gestão de Reservas de Hotel que permite registar os clientes, consultar quartos disponíveis, gerir as reservas, realizar check-in/check-out e a ocupação no hotel/histórico de reservas.
 
 **Exemplo:** *Sistema de gestão de uma biblioteca pessoal que permite registar livros, autores e empréstimos.*
 
