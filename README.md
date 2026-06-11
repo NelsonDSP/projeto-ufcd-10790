@@ -14,8 +14,8 @@
 | **Formando**     | Nelson Proença        |
 | **Formador**     | Carlos Barata                        |
 | **Instituição**  | [Nome da instituição / empresa]      |
-| **Data de início** | [dd/mm/aaaa]                       |
-| **Data de entrega** | [dd/mm/aaaa]                      |
+| **Data de início | [dd/06/2026]                         |
+| **Data de entrega| [dd/06/2026]                         |
 | **Versão**       | 1.0                                  |
 
 ---
