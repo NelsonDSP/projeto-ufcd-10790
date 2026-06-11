@@ -1,6 +1,6 @@
 # Sistema de Gestão de Reservas de Hotel
 
-> permite registar os clientes, consultar quartos disponíveis, gerir as reservas, realizar check-in/check-out e a ocupação no hotel/histórico de reservas.
+> Permite registar os clientes, consultar quartos disponíveis, gerir as reservas, realizar check-in/check-out e a ocupação no hotel/histórico de reservas.
 
 
 
