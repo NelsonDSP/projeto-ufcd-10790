@@ -11,8 +11,8 @@
 | Campo            | Detalhe                              |
 |------------------|--------------------------------------|
 | **Curso**        | UFCD 10790 – Projeto de Programação  |
-| **Formando**     | [O teu nome completo]                |
-| **Formador**     | [Nome do formador]                   |
+| **Formando**     | Nelson Proença        |
+| **Formador**     | Carlos Barata                        |
 | **Instituição**  | [Nome da instituição / empresa]      |
 | **Data de início** | [dd/mm/aaaa]                       |
 | **Data de entrega** | [dd/mm/aaaa]                      |
