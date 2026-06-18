@@ -8,4 +8,4 @@ if utilizador:
     listar_reservas()
     fazer_logout(utilizador)
     
-#admin admin123
+#admin admin123    ID:1
