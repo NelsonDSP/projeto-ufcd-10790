@@ -1,10 +1,14 @@
 from auth import fazer_login, fazer_logout
-from reservas import fazer_reserva, listar_reservas
+from checkinout import fazer_checkin, fazer_checkout
+from reservas import listar_reservas
 
 utilizador = fazer_login()
 
 if utilizador:
-    fazer_reserva()
+    listar_reservas()
+    fazer_checkin()
+    listar_reservas()
+    fazer_checkout()
     listar_reservas()
     fazer_logout(utilizador)
     
