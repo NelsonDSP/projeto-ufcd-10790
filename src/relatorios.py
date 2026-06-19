@@ -2,7 +2,6 @@ from database import criar_ligacao
 from datetime import datetime
 
 def relatorio_ocupacao():
-    """Mostra a taxa de ocupação do hotel num período."""
     print("\n===== RELATÓRIO DE OCUPAÇÃO =====")
 
     checkin = input("Data de início (YYYY-MM-DD): ")
